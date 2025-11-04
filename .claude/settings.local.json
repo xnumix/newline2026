@@ -3,7 +3,8 @@
     "allow": [
       "WebFetch(domain:newline.gent)",
       "Bash(mkdir:*)",
-      "Bash(cp:*)"
+      "Bash(cp:*)",
+      "WebFetch(domain:www.openstreetmap.org)"
     ],
     "deny": [],
     "ask": []
