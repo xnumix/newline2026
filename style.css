@@ -88,7 +88,7 @@ main {
 
 .float-5 {
     bottom: 15%;
-    left: 10%;
+    left: 8%;
     animation: float 7.5s ease-in-out infinite;
     animation-delay: 2s;
 }
@@ -109,7 +109,7 @@ main {
 
 .float-8 {
     bottom: 10%;
-    left: 15%;
+    left: 18%;
     animation: floatAlt 7.2s ease-in-out infinite;
     animation-delay: 1.8s;
 }
@@ -168,6 +168,28 @@ main {
     color: #FFF5E6;
 }
 
+.calendar-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.9rem 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    color: #FF5A6E;
+    font-family: 'Brother', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.calendar-button:hover {
+    background: #FFF5E6;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
 /* How to get there & Contact sections */
 .how-to-get-there,
 .contact-section {
@@ -189,6 +211,81 @@ main {
     font-size: clamp(1rem, 2.5vw, 1.2rem);
     font-weight: 600;
     margin-bottom: 1.5rem;
+}
+
+/* Accordion */
+.accordion {
+    max-width: 650px;
+    margin: 2rem auto;
+}
+
+.accordion-item {
+    margin-bottom: 0.75rem;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.accordion-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 1.2rem 1.5rem;
+    font-family: 'Brother', sans-serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #FFF5E6;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-align: left;
+}
+
+.accordion-header:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.accordion-icon {
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    line-height: 1;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    text-align: left;
+    padding: 0 1.5rem;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 500px;
+    padding: 0 1.5rem 1.5rem;
+}
+
+.accordion-content p {
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.accordion-content p:last-child {
+    margin-bottom: 0;
+}
+
+.accordion-content strong {
+    font-weight: 600;
+    color: #FFF5E6;
 }
 
 .map-container {
