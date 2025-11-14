@@ -1,0 +1,23 @@
+name: Deploy to VM
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H 74.178.90.56 >> ~/.ssh/known_hosts
+
+      - name: Deploy to VM
+        run: |
+          ssh -i ~/.ssh/deploy_key root@74.178.90.56 'bash /root/apps/newline/update.sh'
