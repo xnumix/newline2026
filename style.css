@@ -175,12 +175,18 @@ main {
     color: #FFF5E6;
 }
 
-.calendar-button {
-    display: inline-block;
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
     margin-top: 1.5rem;
+}
+
+.calendar-button,
+.cfp-button {
+    display: inline-block;
     padding: 0.9rem 2rem;
-    background: rgba(255, 255, 255, 0.95);
-    color: #FF5A6E;
     font-family: 'Brother', sans-serif;
     font-size: clamp(1rem, 2.5vw, 1.2rem);
     font-weight: bold;
@@ -191,8 +197,25 @@ main {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
+.calendar-button {
+    background: rgba(255, 255, 255, 0.95);
+    color: #FF5A6E;
+}
+
 .calendar-button:hover {
     background: #FFF5E6;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cfp-button {
+    background: rgba(255, 255, 255, 0.2);
+    color: #FFF5E6;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+}
+
+.cfp-button:hover {
+    background: rgba(255, 255, 255, 0.3);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
